@@ -1,0 +1,119 @@
+@use '../abstracts/' as *;
+
+.max-width {
+    max-width: 1200px;
+}
+
+.start {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: $yellow;
+
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+.about-me {
+    @include flex;
+    background: $orange-light;
+    
+    .wave-text {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    
+    .about-me-body {
+        @include flex;
+        @include gap(5rem);
+        padding: 3rem;
+    }
+
+    &-image {
+        border-radius: 100%;
+        max-width: 200px;
+        max-height: 200px;
+        height: 200px;
+        width: 200px;
+    }
+}
+
+.skills {
+    @include flex;
+    @include gap(5rem, 5rem);
+    flex-wrap: wrap;
+
+    background: $yellow;
+    padding: 10rem 3rem;
+}
+
+.education {
+    @include flex;
+    background: $orange;
+
+    .education-body {
+        width: 100%;
+        flex-direction: column;
+        padding: 3rem 0 1rem 0;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    .education-container {
+        margin-bottom: 2rem;
+    }
+
+    .education-additional {
+        @include flex(flex-start);
+        @include gap(2rem);
+        font-size: 1.2rem;
+        color: $orange-light;
+    }
+    .education-additional > * + * { margin-left: 2rem;}
+}
+
+.work {
+    @include flex(flex-end);
+    background: $orange-light;
+
+    .work-body {
+        width: 100%;
+        flex-direction: column;
+        padding: 3rem 0 1rem 0;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    .work-container {
+        margin-bottom: 2rem;
+    }
+
+    
+    .work-additional {
+        @include flex(flex-start);
+        @include gap(2rem)
+    }
+
+    .work-year {
+        font-size: 1.2rem;
+        color: $orange;
+    }
+}
+
+.projects {
+    @include flex;
+    @include gap(5rem, 5rem);
+    flex-wrap: wrap;
+    
+    background: $yellow;
+    padding: 10rem 3rem;
+}

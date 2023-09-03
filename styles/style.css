@@ -1,0 +1,303 @@
+@font-face {
+  font-family: "AvenirBook";
+  src: url("/static/fonts/AvenirBook.ttf");
+}
+@font-face {
+  font-family: "Cascadia";
+  src: url("/static/fonts/CascadiaMono.ttf");
+}
+body, p {
+  font-family: "Avenir", sans-serif;
+}
+
+h1, h2 {
+  font-family: "Cascadia", monospace;
+}
+
+h3, h4, h5, h6 {
+  font-family: "Avenir", sans-serif;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.project-card {
+  width: 25rem;
+  height: auto;
+  background: #3D405B;
+  border-radius: 0.75rem;
+  position: relative;
+  padding: 1rem;
+  color: white;
+}
+.project-card h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.project-card .project-subtitle {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #F2CC8F;
+  margin-bottom: 1rem;
+}
+.project-card .project-description {
+  padding: 0 2rem;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+.project-card .project-buttons > * + * {
+  margin-left: 3rem;
+}
+.project-card .project-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -3rem;
+}
+.project-card .project-buttons > * {
+  margin-left: 3rem;
+  margin-top: 0;
+}
+.project-card .project-buttons .project-button {
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+}
+.project-card .project-buttons .try-it {
+  background: #81B29A;
+  color: #3D405B;
+}
+.project-card .project-buttons .github {
+  background: #8a8daa;
+  color: #F4F1DE;
+}
+.project-card .project-trophy {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 3.5rem;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(54%) sepia(66%) saturate(440%) hue-rotate(325deg) brightness(93%) contrast(89%);
+}
+
+.skill-card {
+  width: 25rem;
+  height: auto;
+  background: #F2CC8F;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+.skill-card h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.skill-card .logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -2rem;
+}
+.skill-card .logos > * {
+  margin-left: 2rem;
+  margin-top: 0;
+}
+.skill-card .logos > i {
+  font-size: 3.5rem;
+  color: #3D405B;
+}
+
+.max-width {
+  max-width: 1200px;
+}
+
+.start {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F4F1DE;
+}
+.start h1 {
+  font-size: 5rem;
+}
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F2CC8F;
+}
+.about-me .wave-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.about-me .about-me-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -5rem;
+  padding: 3rem;
+}
+.about-me .about-me-body > * {
+  margin-left: 5rem;
+  margin-top: 0;
+}
+.about-me-image {
+  border-radius: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  height: 200px;
+  width: 200px;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -5rem;
+  flex-wrap: wrap;
+  background: #F4F1DE;
+  padding: 10rem 3rem;
+}
+.skills > * {
+  margin-left: 5rem;
+  margin-top: 5rem;
+}
+
+.education {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #E07A5F;
+}
+.education .education-body {
+  width: 100%;
+  flex-direction: column;
+  padding: 3rem 0 1rem 0;
+}
+.education h3 {
+  font-size: 2.5rem;
+}
+.education .education-container {
+  margin-bottom: 2rem;
+}
+.education .education-additional {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: -2rem;
+  font-size: 1.2rem;
+  color: #F2CC8F;
+}
+.education .education-additional > * {
+  margin-left: 2rem;
+  margin-top: 0;
+}
+.education .education-additional > * + * {
+  margin-left: 2rem;
+}
+
+.work {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #F2CC8F;
+}
+.work .work-body {
+  width: 100%;
+  flex-direction: column;
+  padding: 3rem 0 1rem 0;
+}
+.work h3 {
+  font-size: 2.5rem;
+}
+.work .work-container {
+  margin-bottom: 2rem;
+}
+.work .work-additional {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: -2rem;
+}
+.work .work-additional > * {
+  margin-left: 2rem;
+  margin-top: 0;
+}
+.work .work-year {
+  font-size: 1.2rem;
+  color: #E07A5F;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -5rem;
+  flex-wrap: wrap;
+  background: #F4F1DE;
+  padding: 10rem 3rem;
+}
+.projects > * {
+  margin-left: 5rem;
+  margin-top: 5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

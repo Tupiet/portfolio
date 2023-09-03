@@ -1,0 +1,68 @@
+@use '../abstracts/' as *;
+
+.project-card {
+    width: 25rem;
+    height: auto;
+
+    background: $purple;
+    border-radius: .75rem;
+    position: relative;
+
+    padding: 1rem;
+
+    color: white;
+
+    h3 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    .project-subtitle {
+        font-size: 1.25rem;
+        text-align: center;
+        color: $orange-light;
+        margin-bottom: 1rem;
+    }
+
+    .project-description {
+        padding: 0 2rem;
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .project-buttons > * + * { margin-left: 3rem;}
+
+    .project-buttons {
+        @include flex;
+        @include gap(3rem);
+        
+
+        .project-button {
+            font-weight: 700;
+            padding: .4rem 1rem;
+            border-radius: 1rem;
+        }
+
+        .try-it {
+            background: $green;
+            color: $purple;
+        }
+
+        .github {
+            background: $purple-light;
+            color: $yellow;
+        }
+    }
+
+    .project-trophy {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+
+        width: 3.5rem;
+        height: auto;
+
+        filter: brightness(0) saturate(100%) invert(54%) sepia(66%) saturate(440%) hue-rotate(325deg) brightness(93%) contrast(89%);
+    }
+}

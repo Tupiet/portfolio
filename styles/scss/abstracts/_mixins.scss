@@ -1,0 +1,15 @@
+@mixin flex($first: center, $second: center) {
+    display: flex;
+    justify-content: $first;
+    align-items: $second;
+}
+
+@mixin gap($row-gap, $column-gap: 0) {
+
+    margin-left: calc(-1 * $row-gap);
+
+    &> * {
+        margin-left: $row-gap;
+        margin-top: $column-gap;
+    }
+}
