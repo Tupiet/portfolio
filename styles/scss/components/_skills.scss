@@ -2,12 +2,14 @@
 
 .skill-card {
     width: 25rem;
-    height: auto;
+    height: 100%;
 
     background: $orange-light;
     border-radius: .75rem;
 
     padding: 1rem;
+
+    box-shadow: $card-shadow-light;
 
     h3 {
         text-align: center;

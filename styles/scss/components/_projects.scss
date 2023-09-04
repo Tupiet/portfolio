@@ -12,6 +12,8 @@
 
     color: white;
 
+    box-shadow: $card-shadow;
+
     h3 {
         text-align: center;
         font-size: 2rem;
@@ -39,9 +41,19 @@
         
 
         .project-button {
+            font-size: 1.2rem;
             font-weight: 700;
             padding: .4rem 1rem;
             border-radius: 1rem;
+            box-shadow: $card-shadow-light;
+            margin-bottom: .5rem;
+
+            transition: .3s filter ease;
+
+            &:hover {
+                filter: brightness(125%);
+                cursor: pointer;
+            }
         }
 
         .try-it {

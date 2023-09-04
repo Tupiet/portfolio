@@ -14,12 +14,21 @@ h1, h2 {
   font-family: "Cascadia", monospace;
 }
 
-h3, h4, h5, h6 {
+h3, h4, h5, h6, p, a {
   font-family: "Avenir", sans-serif;
 }
 
-p {
+p, a {
   font-size: 1.5rem;
+}
+
+a {
+  color: #F4F1DE;
+  text-decoration: none;
+  transition: 0.25s color ease;
+}
+a:hover {
+  color: #F2CC8F;
 }
 
 /*
@@ -83,6 +92,7 @@ p, h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 1rem;
   color: white;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.47);
 }
 .project-card h3 {
   text-align: center;
@@ -114,9 +124,17 @@ p, h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 .project-card .project-buttons .project-button {
+  font-size: 1.2rem;
   font-weight: 700;
   padding: 0.4rem 1rem;
   border-radius: 1rem;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.38);
+  margin-bottom: 0.5rem;
+  transition: 0.3s filter ease;
+}
+.project-card .project-buttons .project-button:hover {
+  filter: brightness(125%);
+  cursor: pointer;
 }
 .project-card .project-buttons .try-it {
   background: #81B29A;
@@ -137,10 +155,11 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .skill-card {
   width: 25rem;
-  height: auto;
+  height: 100%;
   background: #F2CC8F;
   border-radius: 0.75rem;
   padding: 1rem;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.38);
 }
 .skill-card h3 {
   text-align: center;
@@ -166,6 +185,10 @@ p, h1, h2, h3, h4, h5, h6 {
   max-width: 1200px;
 }
 
+body {
+  background: #F4F1DE;
+}
+
 .start {
   height: 100vh;
   width: 100vw;
@@ -183,6 +206,8 @@ p, h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   background: #F2CC8F;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.38);
+  margin: 1rem 0;
 }
 .about-me .wave-text {
   font-size: 2.5rem;
@@ -290,14 +315,59 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: -5rem;
-  flex-wrap: wrap;
   background: #F4F1DE;
   padding: 10rem 3rem;
 }
-.projects > * {
+.projects .projects-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -5rem;
+  flex-wrap: wrap;
+}
+.projects .projects-body > * {
   margin-left: 5rem;
   margin-top: 5rem;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3D405B;
+  padding: 2rem 3rem 5rem 3rem;
+  color: #F4F1DE;
+}
+.contact h3 {
+  font-size: 2rem;
+  color: #F2CC8F;
+}
+.contact .contact-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact .contact-body > div {
+  width: 600px;
+}
+.contact .contact-body .right {
+  padding-left: 1rem;
+}
+.contact img, .contact i {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+  color: #F2CC8F;
+  filter: brightness(0) saturate(100%) invert(86%) sepia(36%) saturate(597%) hue-rotate(326deg) brightness(102%) contrast(90%);
+}
+.contact .contact-method {
+  display: flex;
+  margin-left: -1rem;
+  align-items: center;
+}
+.contact .contact-method > * {
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

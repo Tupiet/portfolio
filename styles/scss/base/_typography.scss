@@ -8,10 +8,21 @@ h1, h2 {
     font-family: $title-font;
 }
 
-h3, h4, h5, h6 {
+h3, h4, h5, h6, p, a {
     font-family: $text-font;
 }
 
-p {
+p, a {
     font-size: 1.5rem;
+}
+
+a {
+    color: $yellow;
+    text-decoration: none;
+
+    transition: .25s color ease;
+
+    &:hover {
+        color: $orange-light;
+    }
 }

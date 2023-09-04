@@ -4,6 +4,10 @@
     max-width: 1200px;
 }
 
+body {
+    background: $yellow;
+}
+
 .start {
     height: 100vh;
     width: 100vw;
@@ -22,10 +26,13 @@
 .about-me {
     @include flex;
     background: $orange-light;
+    box-shadow: $card-shadow-light;
+    margin: 1rem 0;
     
     .wave-text {
         font-size: 2.5rem;
         font-weight: 700;
+        //font-family: $title-font;
     }
     
     .about-me-body {
@@ -111,9 +118,53 @@
 
 .projects {
     @include flex;
-    @include gap(5rem, 5rem);
-    flex-wrap: wrap;
     
     background: $yellow;
     padding: 10rem 3rem;
+
+    .projects-body {
+        @include flex;
+        @include gap(5rem, 5rem);
+        flex-wrap: wrap;
+    }
+}
+
+.contact {
+    @include flex;
+    background: $purple;
+    padding: 2rem 3rem 5rem 3rem;
+    color: $yellow;
+
+    h3 {
+        font-size: 2rem;
+        color: $orange-light;
+    }
+
+    .contact-body {
+        display: flex;
+        flex-wrap: wrap;
+
+        > div {
+            width: 600px;
+        }
+
+        .right {
+            padding-left: 1rem;
+        }
+    }
+
+    img, i {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        font-size: 2rem;
+        color: $orange-light;
+        filter: brightness(0) saturate(100%) invert(86%) sepia(36%) saturate(597%) hue-rotate(326deg) brightness(102%) contrast(90%);
+    }
+
+    .contact-method {
+        display: flex;
+        @include gap(1rem, 1rem);
+        align-items: center;
+    }
 }
