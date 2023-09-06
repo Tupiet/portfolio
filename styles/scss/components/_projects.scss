@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 .project-card {
-    width: 25rem;
+    width: 100%;
     height: auto;
 
     background: $purple;
@@ -13,6 +13,10 @@
     color: white;
 
     box-shadow: $card-shadow;
+    
+    @media screen and (min-width: 600px) {
+        width: 25rem;
+    }
 
     h3 {
         text-align: center;
@@ -28,25 +32,39 @@
     }
 
     .project-description {
-        padding: 0 2rem;
+        padding: 0 1rem;
         font-size: 1.25rem;
         margin-bottom: 2rem;
-    }
+        text-align: center;
 
-    .project-buttons > * + * { margin-left: 3rem;}
+        @include lg {
+            padding: 0 2rem;
+        }
+    }
 
     .project-buttons {
         @include flex;
         @include gap(3rem);
+        flex-direction: column;
+
+        @include lg {
+            flex-direction: row;
+        }
         
 
         .project-button {
+            width: 10rem;
             font-size: 1.2rem;
             font-weight: 700;
+            text-align: center;
             padding: .4rem 1rem;
             border-radius: 1rem;
             box-shadow: $card-shadow-light;
             margin-bottom: .5rem;
+
+            @include lg {
+                width: auto;
+            }
 
             transition: .3s filter ease;
 
@@ -59,6 +77,11 @@
         .try-it {
             background: $green;
             color: $purple;
+            margin-bottom: 1rem;
+
+            @include lg {
+                margin-bottom: .5rem;
+            }
         }
 
         .github {
@@ -69,8 +92,8 @@
 
     .project-trophy {
         position: absolute;
-        top: 1.2rem;
-        right: 1.2rem;
+        top: -1.2rem;
+        right: -1.2rem;
 
         width: 3.5rem;
         height: auto;

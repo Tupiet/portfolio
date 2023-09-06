@@ -1,8 +1,9 @@
 @use '../abstracts/' as *;
 
 .skill-card {
-    width: 25rem;
+    width: 100%;    
     height: 100%;
+    @include lg { width: 25rem; }
 
     background: $orange-light;
     border-radius: .75rem;
@@ -11,17 +12,26 @@
 
     box-shadow: $card-shadow-light;
 
+
     h3 {
         text-align: center;
         font-size: 2rem;
-        margin-bottom: 1.5rem;
     }
 
     .logos {
-        @include flex;
-        @include gap(2rem);
-
-        > i {
+        @include flex(space-evenly);
+        flex-wrap: wrap;
+        @include gap(0rem, 1.5rem);
+        
+        
+        > div {
+            @include flex;
+            
+            flex-basis: 50%;
+            @include lg { flex-basis: 25%; }
+        }
+        
+        i {
             font-size: 3.5rem;
             color: $purple;
         }

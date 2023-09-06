@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 .max-width {
-    max-width: 1200px;
+    max-width: $max-width;
 }
 
 body {
@@ -14,39 +14,62 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 
     background: $yellow;
 
     h1 {
-        font-size: 5rem;
+        font-size: 1rem;
+
+        @include xl {
+            font-size: 5rem;
+        }
     }
+
+    
 }
 
 .about-me {
     @include flex;
+    flex-direction: row;
     background: $orange-light;
     box-shadow: $card-shadow-light;
     margin: 1rem 0;
+
+    
     
     .wave-text {
         font-size: 2.5rem;
         font-weight: 700;
-        //font-family: $title-font;
     }
     
     .about-me-body {
         @include flex;
         @include gap(5rem);
+        flex-direction: column;
         padding: 3rem;
+
+        @include xl {
+            flex-direction: row;
+        }
+    }
+
+    .image-me {
+        @include flex;
     }
 
     .about-me-image {
         border-radius: 100%;
-        max-width: 200px;
-        max-height: 200px;
-        height: 200px;
-        width: 200px;
+        max-width: 150px;
+        width: 150px;
+        height: auto;
+        margin-bottom: 3rem;
+
+        @include lg {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -68,68 +91,79 @@ body {
     }
 }
 
-.education {
+.experience {
     @include flex;
-    background: $orange;
+    //padding: 2rem;
 
-    .education-body {
-        width: 100%;
-        flex-direction: column;
-        padding: 3rem 0 1rem 0;
-    }
+    .experience-body {
+        display: block;
 
-    h3 {
-        font-size: 2.5rem;
-    }
+        > div {
+            width: 100vw;
+            flex: 1;
+        }
 
-    .education-container {
-        margin-bottom: 2rem;
-    }
+        .education-container {
+            background: $orange;
+        }
 
-    .education-additional {
-        @include flex(flex-start);
-        @include gap(2rem);
-        font-size: 1.2rem;
-        color: $orange-light;
-    }
-    .education-additional > * + * { margin-left: 2rem;}
-}
+        @media screen and (min-width: 800px) {
+            @include flex(center, stretch);
+            flex-wrap: wrap;
+            > div {
+                width: calc(100vw / 2);
+            }
+        }
 
-.work {
-    @include flex(flex-end);
-    background: $orange-light;
+        .education-body,
+        .work-body {
+            @include flex(flex-start, flex-start);
+            flex-direction: column;
+            padding: 3rem;
+            background: $orange;
+        }
 
-    .work-body {
-        width: 100%;
-        flex-direction: column;
-        padding: 3rem 0 1rem 0;
-    }
+        .work-body {
+            background: $orange-light;
+        }
 
-    h3 {
-        font-size: 2.5rem;
-    }
-
-    .work-container {
-        margin-bottom: 2rem;
-    }
-
+        h3 {
+            font-size: 2.5rem;
+        }
     
-    .work-additional {
-        @include flex(flex-start);
-        @include gap(2rem)
+        .education-container, .work-container {
+            margin-bottom: 2rem;
+        }
+    
+        .education-additional, .work-additional {
+            @include flex(flex-start);
+            @include gap(2rem);
+            font-size: 1.2rem;
+            color: $orange-light;
+        }
+
+        .work-additional {
+            color: black;
+        }
+    
+        .work-year {
+            font-size: 1.2rem;
+            color: $orange;
+        }
     }
 
-    .work-year {
-        font-size: 1.2rem;
-        color: $orange;
-    }
 }
 
 .projects {
     @include flex;
     
     background: $yellow;
-    padding: 10rem 3rem;
+    padding: 5rem 3rem;
+
+    h2 {
+        font-size: 2.5rem;
+        text-align: center
+    }
 
     .projects-body {
         @include flex;
@@ -151,15 +185,17 @@ body {
 
     .contact-body {
         display: flex;
+        @include gap(15rem);
         flex-wrap: wrap;
 
         > div {
-            width: 600px;
+            width: 300px;
         }
 
-        .right {
-            padding-left: 1rem;
+        .left p {
+            margin-bottom: 2rem;
         }
+
     }
 
     img, i {
