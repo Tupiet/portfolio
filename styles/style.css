@@ -337,7 +337,7 @@ body {
 .experience .experience-body .education-container {
   background: #E07A5F;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .experience .experience-body {
     display: flex;
     justify-content: center;
@@ -369,14 +369,22 @@ body {
 .experience .experience-body .education-additional, .experience .experience-body .work-additional {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-  margin-left: -2rem;
+  align-items: flex-start;
+  flex-direction: column;
   font-size: 1.2rem;
   color: #F2CC8F;
+  margin-top: 1rem;
 }
-.experience .experience-body .education-additional > *, .experience .experience-body .work-additional > * {
-  margin-left: 2rem;
-  margin-top: 0;
+@media screen and (min-width: 450px) {
+  .experience .experience-body .education-additional, .experience .experience-body .work-additional {
+    margin-left: -2rem;
+    flex-direction: row;
+    margin-top: 0;
+  }
+  .experience .experience-body .education-additional > *, .experience .experience-body .work-additional > * {
+    margin-left: 2rem;
+    margin-top: 0;
+  }
 }
 .experience .experience-body .work-additional {
   color: black;

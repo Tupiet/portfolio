@@ -93,7 +93,6 @@ body {
 
 .experience {
     @include flex;
-    //padding: 2rem;
 
     .experience-body {
         display: block;
@@ -107,7 +106,7 @@ body {
             background: $orange;
         }
 
-        @media screen and (min-width: 800px) {
+        @media screen and (min-width: 900px) {
             @include flex(center, stretch);
             flex-wrap: wrap;
             > div {
@@ -136,10 +135,17 @@ body {
         }
     
         .education-additional, .work-additional {
-            @include flex(flex-start);
-            @include gap(2rem);
+            @include flex(flex-start, flex-start);
+            flex-direction: column;
             font-size: 1.2rem;
             color: $orange-light;
+            margin-top: 1rem;
+            
+            @include lg {
+                @include gap(2rem);
+                flex-direction: row;
+                margin-top: 0;
+            }
         }
 
         .work-additional {
