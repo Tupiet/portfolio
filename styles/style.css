@@ -431,18 +431,19 @@ body {
 }
 .contact .contact-body {
   display: flex;
-  margin-left: -15rem;
   flex-wrap: wrap;
-}
-.contact .contact-body > * {
-  margin-left: 15rem;
-  margin-top: 0;
-}
-.contact .contact-body > div {
-  width: 300px;
 }
 .contact .contact-body .left p {
   margin-bottom: 2rem;
+}
+@media screen and (min-width: 450px) {
+  .contact .contact-body {
+    margin-left: -15rem;
+  }
+  .contact .contact-body > * {
+    margin-left: 15rem;
+    margin-top: 0;
+  }
 }
 .contact img, .contact i {
   display: inline-block;

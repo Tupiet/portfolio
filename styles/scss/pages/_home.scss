@@ -191,15 +191,15 @@ body {
 
     .contact-body {
         display: flex;
-        @include gap(15rem);
         flex-wrap: wrap;
-
-        > div {
-            width: 300px;
-        }
-
+        
         .left p {
             margin-bottom: 2rem;
+        }
+        
+        @include lg {
+            @include gap(15rem);
+
         }
 
     }
