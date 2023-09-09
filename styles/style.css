@@ -84,6 +84,20 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+.button {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.38);
+  transition: 0.3s filter linear;
+}
+.button:hover {
+  filter: brightness(125%);
+  cursor: pointer;
+}
+
 .project-card {
   width: 100%;
   height: auto;
@@ -138,24 +152,13 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 .project-card .project-buttons .project-button {
-  width: 10rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-align: center;
-  padding: 0.4rem 1rem;
-  border-radius: 1rem;
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.38);
+  width: 12rem;
   margin-bottom: 0.5rem;
-  transition: 0.3s filter ease;
 }
 @media screen and (min-width: 450px) {
   .project-card .project-buttons .project-button {
     width: auto;
   }
-}
-.project-card .project-buttons .project-button:hover {
-  filter: brightness(125%);
-  cursor: pointer;
 }
 .project-card .project-buttons .try-it {
   background: #81B29A;
@@ -222,6 +225,10 @@ p, h1, h2, h3, h4, h5, h6 {
 .skill-card .logos i {
   font-size: 3.5rem;
   color: #3D405B;
+  transition: 0.2s color ease;
+}
+.skill-card .logos i:hover {
+  color: #E07A5F;
 }
 
 .max-width {
@@ -242,12 +249,36 @@ body {
   text-align: center;
   background: #F4F1DE;
 }
+.start .languages {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+.start .languages span:not(:last-of-type)::after {
+  clear: both;
+  content: " - ";
+}
+.start .languages a {
+  color: #3D405B;
+  font-weight: 500;
+  font-family: "Cascadia", monospace;
+}
+.start .languages a.active {
+  color: #E07A5F;
+}
+.start .languages a:hover {
+  color: #8a8daa;
+}
 .start h1 {
-  font-size: 1rem;
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 600px) {
   .start h1 {
     font-size: 5rem;
+    line-height: 1.2;
+    margin-bottom: 0;
   }
 }
 
@@ -285,6 +316,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .about-me .about-me-image {
   border-radius: 100%;
@@ -297,6 +330,20 @@ body {
   .about-me .about-me-image {
     margin-bottom: 0;
   }
+}
+.about-me .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.about-me .button {
+  background: #E07A5F;
+  color: white;
+}
+.about-me .button:hover {
+  filter: brightness(110%);
+  cursor: pointer;
 }
 
 .skills {
@@ -416,6 +463,10 @@ body {
   margin-left: 5rem;
   margin-top: 5rem;
 }
+.projects .project-trophy {
+  -webkit-user-select: none;
+  user-select: none;
+}
 
 .contact {
   display: flex;
@@ -452,6 +503,8 @@ body {
   font-size: 2rem;
   color: #F2CC8F;
   filter: brightness(0) saturate(100%) invert(86%) sepia(36%) saturate(597%) hue-rotate(326deg) brightness(102%) contrast(90%);
+  -webkit-user-select: none;
+  user-select: none;
 }
 .contact .contact-method {
   display: flex;

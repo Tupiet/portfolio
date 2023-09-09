@@ -1,0 +1,17 @@
+@use '../abstracts/' as *;
+
+.button {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: .4rem 1rem;
+    border-radius: 1rem;
+    box-shadow: $card-shadow-light;
+
+    transition: .3s filter linear;
+
+    &:hover {
+        filter: brightness(125%);
+        cursor: pointer;
+    }
+}

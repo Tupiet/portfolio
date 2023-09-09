@@ -20,11 +20,40 @@ body {
 
     background: $yellow;
 
+    .languages {
+        position: absolute; 
+        right: 2rem; 
+        top: 2rem;
+
+        span:not(:last-of-type)::after {
+            clear: both;
+            content: ' - ';
+        }
+
+        a {
+            color: $purple;
+            font-weight: 500;
+            font-family: $title-font;
+
+            &.active {
+                color: $orange;
+            }
+
+            &:hover {
+                color: $purple-light;
+            }
+        }
+    }
+
     h1 {
-        font-size: 1rem;
+        font-size: 2.5rem;
+        line-height: 1;
+        margin-bottom: 1rem;
 
         @include xl {
             font-size: 5rem;
+            line-height: 1.2;
+            margin-bottom: 0;
         }
     }
 
@@ -37,8 +66,6 @@ body {
     background: $orange-light;
     box-shadow: $card-shadow-light;
     margin: 1rem 0;
-
-    
     
     .wave-text {
         font-size: 2.5rem;
@@ -58,6 +85,7 @@ body {
 
     .image-me {
         @include flex;
+        @include no-select;
     }
 
     .about-me-image {
@@ -69,6 +97,21 @@ body {
 
         @include lg {
             margin-bottom: 0;
+        }
+    }
+
+    .buttons {
+        @include flex;
+        margin-top: 2rem;
+    }
+
+    .button {
+        background: $orange;
+        color: white;
+
+        &:hover {
+            filter: brightness(110%);
+            cursor: pointer;
         }
     }
 }
@@ -176,6 +219,10 @@ body {
         @include gap(5rem, 5rem);
         flex-wrap: wrap;
     }
+
+    .project-trophy {
+        @include no-select;
+    }
 }
 
 .contact {
@@ -211,6 +258,7 @@ body {
         font-size: 2rem;
         color: $orange-light;
         filter: brightness(0) saturate(100%) invert(86%) sepia(36%) saturate(597%) hue-rotate(326deg) brightness(102%) contrast(90%);
+        @include no-select;
     }
 
     .contact-method {
