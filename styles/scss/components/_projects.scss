@@ -78,6 +78,7 @@
     }
 
     .project-trophy {
+        @include no-select;
         position: absolute;
         top: -1.2rem;
         right: -1.2rem;
@@ -86,5 +87,21 @@
         height: auto;
 
         filter: brightness(0) saturate(100%) invert(54%) sepia(66%) saturate(440%) hue-rotate(325deg) brightness(93%) contrast(89%);
+        
+        animation-name: bounce;
+        animation-duration: .5s;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+}
+
+@keyframes bounce {
+    from {
+        width: 3.5rem;
+    }
+    to {
+        width: 3.85rem;
     }
 }

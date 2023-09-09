@@ -175,14 +175,30 @@ p, h1, h2, h3, h4, h5, h6 {
   color: #F4F1DE;
 }
 .project-card .project-trophy {
+  -webkit-user-select: none;
+  user-select: none;
   position: absolute;
   top: -1.2rem;
   right: -1.2rem;
   width: 3.5rem;
   height: auto;
   filter: brightness(0) saturate(100%) invert(54%) sepia(66%) saturate(440%) hue-rotate(325deg) brightness(93%) contrast(89%);
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
+@keyframes bounce {
+  from {
+    width: 3.5rem;
+  }
+  to {
+    width: 3.85rem;
+  }
+}
 .skill-card {
   width: 100%;
   height: 100%;
@@ -462,10 +478,6 @@ body {
 .projects .projects-body > * {
   margin-left: 5rem;
   margin-top: 5rem;
-}
-.projects .project-trophy {
-  -webkit-user-select: none;
-  user-select: none;
 }
 
 .contact {
