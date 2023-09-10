@@ -15,7 +15,7 @@ jobs:
               with:
                 type: zip
                 filename: files.zip
-                exclusions: '*.git* /*styles/sass/* README.md package.json'
+                exclusions: '*.git* /*styles/scss/* README.md package.json'
             # Penja'l al GitHub Release
             - name: Create GitHub Release
               uses: marvinpinto/action-automatic-releases@latest
