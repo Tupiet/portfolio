@@ -1,0 +1,27 @@
+name: Release code as zip in GitHub Releases
+on: push
+jobs: 
+    release-project:
+        name: Release code in releases
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps: 
+            # Permet que s'utilitzi el repositori actual
+            - uses: actions/checkout@v2 
+            # Comprimeix el codi
+            - name: Compress files
+              uses: thedoctor0/zip-release@0.7.1
+              with:
+                type: zip
+                filename: files.zip
+                exclusions: '*.git* /*styles/sass/* README.md package.json'
+            # Penja'l al GitHub Release
+            - name: Create GitHub Release
+              uses: marvinpinto/action-automatic-releases@latest
+              with:
+                repo_token: "${{ secrets.GITHUB_TOKEN }}"
+                automatic_release_tag: "latest"
+                prerelease: true
+                title: Release V${{ github.run_number }}
+                files: files.zip
