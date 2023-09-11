@@ -88,12 +88,7 @@
 
         filter: brightness(0) saturate(100%) invert(54%) sepia(66%) saturate(440%) hue-rotate(325deg) brightness(93%) contrast(89%);
         
-        animation-name: bounce;
-        animation-duration: .5s;
-        animation-timing-function: ease-in-out;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
+        @include animation(bounce);
     }
 }
 

@@ -247,6 +247,10 @@ p, h1, h2, h3, h4, h5, h6 {
   color: #E07A5F;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .max-width {
   max-width: 1200px;
 }
@@ -295,6 +299,27 @@ body {
     font-size: 5rem;
     line-height: 1.2;
     margin-bottom: 0;
+  }
+}
+.start img {
+  position: absolute;
+  bottom: 5rem;
+  width: 2rem;
+  left: calc(50% - 1rem);
+  height: 2rem;
+  animation-name: up-and-down;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes up-and-down {
+  from {
+    bottom: 10%;
+  }
+  to {
+    bottom: calc(10% - 0.5rem);
   }
 }
 
