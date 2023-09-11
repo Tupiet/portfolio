@@ -429,13 +429,16 @@ body {
 .experience .experience-body .education-container, .experience .experience-body .work-container {
   margin-bottom: 2rem;
 }
+.experience .experience-body .education-container p, .experience .experience-body .work-container p {
+  font-weight: 500;
+}
 .experience .experience-body .education-additional, .experience .experience-body .work-additional {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   font-size: 1.2rem;
-  color: #F2CC8F;
+  color: black;
   margin-top: 1rem;
 }
 @media screen and (min-width: 450px) {
@@ -454,7 +457,7 @@ body {
 }
 .experience .experience-body .work-year {
   font-size: 1.2rem;
-  color: #E07A5F;
+  color: black;
 }
 
 .projects {
