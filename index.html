@@ -8,11 +8,18 @@
 
     <link rel="shortcut icon" href="static/assets/jo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     
     <section class="start">
+        <div class="mode">
+            <button id="change-mode-button" title="Canviar tema">
+                <i class="fa-regular fa-lightbulb" id="light-icon"></i>
+                <i class="fa-regular fa-moon" id="dark-icon"></i>
+            </button>
+        </div>
         <div class="languages">
             <span><a href="https://escri.dev" class="active">CA</a></span>
             <span><a href="https://escri.dev/es">ES</a></span>
@@ -20,7 +27,7 @@
         </div>
         <h1 id="my-name">Aleix Escrihuela</h1>
         <h2 id="my-job">Full-stack developer</h2>
-        <a href="#about" id="go-to-about"><img src="static/assets/chevron-down.svg" alt="Fletxa baix"></a>
+        <a href="#about" id="go-to-about" title="Fletxa baix"><i class="fa-solid fa-chevron-down"></i></a>
     </section>
 
     <section class="about-me" id="about">

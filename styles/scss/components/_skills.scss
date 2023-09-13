@@ -5,7 +5,7 @@
     height: 100%;
     @include lg { width: 25rem; }
 
-    background: $orange-light;
+    background: var(--primary-light);
     border-radius: .75rem;
 
     padding: 1rem;
@@ -33,12 +33,12 @@
         
         i {
             font-size: 3.5rem;
-            color: $purple;
+            color: var(--secondary);
 
             transition: .2s color ease;
 
             &:hover {
-                color: $orange;
+                color: var(--primary);
             }
         }
     }

@@ -2,6 +2,7 @@
 
 html {
     scroll-behavior: smooth;
+    transition: 1s all ease;
 }
 
 .max-width {
@@ -9,7 +10,7 @@ html {
 }
 
 body {
-    background: $yellow;
+    background: var(--base);
 }
 
 .start {
@@ -22,7 +23,38 @@ body {
     flex-direction: column;
     text-align: center;
 
-    background: $yellow;
+    background: var(--base);
+    color: var(--text);
+
+    .mode {
+        position: absolute;
+        left: 2rem;
+        top: 1.5rem;
+
+        button {
+            background: transparent;
+            border: none;
+            outline: none;
+            width: 3rem;
+            height: 3rem;
+            @include flex;
+
+            &:hover {
+                background: var(--mode-button);
+                border-radius: 50%;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+
+        i {
+            color: var(--text);
+            font-size: 1.5rem;
+            font-size: 1.5rem;
+
+            &#light-icon { display: none; }
+        }
+    }
 
     .languages {
         position: absolute; 
@@ -35,16 +67,16 @@ body {
         }
 
         a {
-            color: $purple;
+            color: var(--text-languages);
             font-weight: 500;
             font-family: $title-font;
 
             &.active {
-                color: $orange;
+                color: var(--primary);
             }
 
             &:hover {
-                color: $purple-light;
+                color: var(--secondary-light);
             }
         }
     }
@@ -61,12 +93,13 @@ body {
         }
     }
 
-    img {
+    a i {
         position: absolute;
         bottom: 5rem;
         width: 2rem;
         left: calc(50% - 1rem);
         height: 2rem;
+        color: var(--text);
 
         @include animation(up-and-down)
     }
@@ -86,7 +119,7 @@ body {
 .about-me {
     @include flex;
     flex-direction: row;
-    background: $orange-light;
+    background: var(--about-me-background);
     box-shadow: $card-shadow-light;
     margin: 1rem 0;
     
@@ -129,7 +162,7 @@ body {
     }
 
     .button {
-        background: $orange;
+        background: var(--about-me-button);
         color: white;
 
         &:hover {
@@ -142,12 +175,13 @@ body {
 .skills {
     @include flex;
 
-    background: $yellow;
+    background: var(--base);
     padding: 5rem 3rem;
 
     h2 {
         font-size: 2.5rem;
-        text-align: center
+        text-align: center;
+        color: var(--text);
     }
 
     .skills-body {
@@ -169,7 +203,7 @@ body {
         }
 
         .education-container {
-            background: $orange;
+            background: var(--primary);
         }
 
         @media screen and (min-width: 900px) {
@@ -185,11 +219,11 @@ body {
             @include flex(flex-start, flex-start);
             flex-direction: column;
             padding: 3rem;
-            background: $orange;
+            background: var(--primary);
         }
 
         .work-body {
-            background: $orange-light;
+            background: var(--works-background);
         }
 
         h3 {
@@ -208,7 +242,7 @@ body {
             @include flex(flex-start, flex-start);
             flex-direction: column;
             font-size: 1.2rem;
-            color: black;
+            color: var(--text);
             margin-top: 1rem;
             
             @include lg {
@@ -219,12 +253,12 @@ body {
         }
 
         .work-additional {
-            color: black;
+            color: var(--text);
         }
     
         .work-year {
             font-size: 1.2rem;
-            color: black;
+            color: var(--text);
         }
     }
 
@@ -233,8 +267,9 @@ body {
 .projects {
     @include flex;
     
-    background: $yellow;
+    background: var(--base);
     padding: 5rem 3rem;
+    color: var(--text);
 
     h2 {
         font-size: 2.5rem;
@@ -250,13 +285,13 @@ body {
 
 .contact {
     @include flex;
-    background: $purple;
+    background: var(--contact-background);
     padding: 2rem 3rem 5rem 3rem;
-    color: $yellow;
+    color: var(--contact-color);
 
     h3 {
         font-size: 2rem;
-        color: $orange-light;
+        color: var(--contact-title-color);
     }
 
     .contact-body {
@@ -279,8 +314,8 @@ body {
         width: 2rem;
         height: 2rem;
         font-size: 2rem;
-        color: $orange-light;
-        filter: brightness(0) saturate(100%) invert(86%) sepia(36%) saturate(597%) hue-rotate(326deg) brightness(102%) contrast(90%);
+        color: var(--contact-text);
+        filter: var(--contact-filter);
         @include no-select;
     }
 
@@ -288,5 +323,12 @@ body {
         display: flex;
         @include gap(1rem, 1rem);
         align-items: center;
+        a {
+            color: var(--contact-method-color);
+
+            &:hover {
+                color: var(--primary-light);
+            }
+        }
     }
 }

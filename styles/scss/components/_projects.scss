@@ -4,7 +4,7 @@
     width: 100%;
     height: auto;
 
-    background: $purple;
+    background: var(--project-background);
     border-radius: .75rem;
     position: relative;
 
@@ -27,7 +27,7 @@
     .project-subtitle {
         font-size: 1.25rem;
         text-align: center;
-        color: $orange-light;
+        color: var(--primary-light);
         margin-bottom: 1rem;
     }
 
@@ -62,8 +62,8 @@
         }
 
         .try-it {
-            background: $green;
-            color: $purple;
+            background: var(--tertiary);
+            color: var(--secondary);
             margin-bottom: 1rem;
 
             @include lg {
@@ -72,8 +72,8 @@
         }
 
         .github {
-            background: $purple-light;
-            color: $yellow;
+            background: var(--project-github-background);
+            color: var(--project-github-color);
         }
     }
 

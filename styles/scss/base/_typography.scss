@@ -17,12 +17,12 @@ p, a {
 }
 
 a {
-    color: $yellow;
+    color: var(--base);
     text-decoration: none;
 
     transition: .25s color ease;
 
     &:hover {
-        color: $orange-light;
+        color: var(--primary-light);
     }
 }

@@ -1,3 +1,47 @@
+html {
+  --primary: #E07A5F;
+  --primary-light: #F2CC8F;
+  --secondary: #3D405B;
+  --secondary-light: #8a8daa;
+  --tertiary: #81B29A;
+  --base: #F4F1DE;
+  --text: black;
+  --text-languages: var(--secondary);
+  --mode-button: var(--primary-light);
+  --about-me-background: var(--primary-light);
+  --about-me-button: var(--primary);
+  --works-background: var(--primary-light);
+  --project-background: var(--secondary);
+  --project-github-background: var(--secondary-light);
+  --project-github-color: var(--secondary);
+  --contact-background: var(--secondary);
+  --contact-color: var(--base);
+  --contact-filter: brightness(0) saturate(100%) invert(86%) sepia(36%) saturate(597%) hue-rotate(326deg) brightness(102%) contrast(90%);
+  --contact-title-color: var(--primary-light);
+}
+
+html[data-theme=dark] {
+  --primary: #E07A5F;
+  --primary-light: #F2CC8F;
+  --secondary: #3D405B;
+  --secondary-light: #8a8daa;
+  --tertiary: #81B29A;
+  --base: #3D405B;
+  --text: #F4F1DE;
+  --text-languages: #F4F1DE;
+  --mode-button: var(--secondary-light);
+  --about-me-background: var(--secondary-light);
+  --about-me-button: var(--secondary);
+  --works-background: var(--secondary-light);
+  --project-background: var(--secondary-light);
+  --project-github-background: var(--secondary);
+  --project-github-color: var(--text);
+  --contact-background: var(--secondary-light);
+  --contact-color: var(--text);
+  --contact-filter: brightness(0) saturate(100%) invert(23%) sepia(10%) saturate(1764%) hue-rotate(196deg) brightness(91%) contrast(86%);
+  --contact-title-color: var(--secondary);
+}
+
 @font-face {
   font-family: "AvenirBook";
   src: url("/static/fonts/AvenirBook.ttf");
@@ -23,12 +67,12 @@ p, a {
 }
 
 a {
-  color: #F4F1DE;
+  color: var(--base);
   text-decoration: none;
   transition: 0.25s color ease;
 }
 a:hover {
-  color: #F2CC8F;
+  color: var(--primary-light);
 }
 
 /*
@@ -101,7 +145,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .project-card {
   width: 100%;
   height: auto;
-  background: #3D405B;
+  background: var(--project-background);
   border-radius: 0.75rem;
   position: relative;
   padding: 1rem;
@@ -121,7 +165,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .project-card .project-subtitle {
   font-size: 1.25rem;
   text-align: center;
-  color: #F2CC8F;
+  color: var(--primary-light);
   margin-bottom: 1rem;
 }
 .project-card .project-description {
@@ -161,8 +205,8 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 .project-card .project-buttons .try-it {
-  background: #81B29A;
-  color: #3D405B;
+  background: var(--tertiary);
+  color: var(--secondary);
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 450px) {
@@ -171,8 +215,8 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 .project-card .project-buttons .github {
-  background: #8a8daa;
-  color: #F4F1DE;
+  background: var(--project-github-background);
+  color: var(--project-github-color);
 }
 .project-card .project-trophy {
   -webkit-user-select: none;
@@ -202,7 +246,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .skill-card {
   width: 100%;
   height: 100%;
-  background: #F2CC8F;
+  background: var(--primary-light);
   border-radius: 0.75rem;
   padding: 1rem;
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.38);
@@ -240,15 +284,16 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .skill-card .logos i {
   font-size: 3.5rem;
-  color: #3D405B;
+  color: var(--secondary);
   transition: 0.2s color ease;
 }
 .skill-card .logos i:hover {
-  color: #E07A5F;
+  color: var(--primary);
 }
 
 html {
   scroll-behavior: smooth;
+  transition: 1s all ease;
 }
 
 .max-width {
@@ -256,7 +301,7 @@ html {
 }
 
 body {
-  background: #F4F1DE;
+  background: var(--base);
 }
 
 .start {
@@ -267,7 +312,37 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  background: #F4F1DE;
+  background: var(--base);
+  color: var(--text);
+}
+.start .mode {
+  position: absolute;
+  left: 2rem;
+  top: 1.5rem;
+}
+.start .mode button {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start .mode button:hover {
+  background: var(--mode-button);
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+.start .mode i {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-size: 1.5rem;
+}
+.start .mode i#light-icon {
+  display: none;
 }
 .start .languages {
   position: absolute;
@@ -279,15 +354,15 @@ body {
   content: " - ";
 }
 .start .languages a {
-  color: #3D405B;
+  color: var(--text-languages);
   font-weight: 500;
   font-family: "Cascadia", monospace;
 }
 .start .languages a.active {
-  color: #E07A5F;
+  color: var(--primary);
 }
 .start .languages a:hover {
-  color: #8a8daa;
+  color: var(--secondary-light);
 }
 .start h1 {
   font-size: 2.5rem;
@@ -301,12 +376,13 @@ body {
     margin-bottom: 0;
   }
 }
-.start img {
+.start a i {
   position: absolute;
   bottom: 5rem;
   width: 2rem;
   left: calc(50% - 1rem);
   height: 2rem;
+  color: var(--text);
   animation-name: up-and-down;
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
@@ -328,7 +404,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background: #F2CC8F;
+  background: var(--about-me-background);
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.38);
   margin: 1rem 0;
 }
@@ -379,7 +455,7 @@ body {
   margin-top: 2rem;
 }
 .about-me .button {
-  background: #E07A5F;
+  background: var(--about-me-button);
   color: white;
 }
 .about-me .button:hover {
@@ -391,12 +467,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F4F1DE;
+  background: var(--base);
   padding: 5rem 3rem;
 }
 .skills h2 {
   font-size: 2.5rem;
   text-align: center;
+  color: var(--text);
 }
 .skills .skills-body {
   display: flex;
@@ -423,7 +500,7 @@ body {
   flex: 1;
 }
 .experience .experience-body .education-container {
-  background: #E07A5F;
+  background: var(--primary);
 }
 @media screen and (min-width: 900px) {
   .experience .experience-body {
@@ -443,10 +520,10 @@ body {
   align-items: flex-start;
   flex-direction: column;
   padding: 3rem;
-  background: #E07A5F;
+  background: var(--primary);
 }
 .experience .experience-body .work-body {
-  background: #F2CC8F;
+  background: var(--works-background);
 }
 .experience .experience-body h3 {
   font-size: 2.5rem;
@@ -463,7 +540,7 @@ body {
   align-items: flex-start;
   flex-direction: column;
   font-size: 1.2rem;
-  color: black;
+  color: var(--text);
   margin-top: 1rem;
 }
 @media screen and (min-width: 450px) {
@@ -478,19 +555,20 @@ body {
   }
 }
 .experience .experience-body .work-additional {
-  color: black;
+  color: var(--text);
 }
 .experience .experience-body .work-year {
   font-size: 1.2rem;
-  color: black;
+  color: var(--text);
 }
 
 .projects {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F4F1DE;
+  background: var(--base);
   padding: 5rem 3rem;
+  color: var(--text);
 }
 .projects h2 {
   font-size: 2.5rem;
@@ -512,13 +590,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #3D405B;
+  background: var(--contact-background);
   padding: 2rem 3rem 5rem 3rem;
-  color: #F4F1DE;
+  color: var(--contact-color);
 }
 .contact h3 {
   font-size: 2rem;
-  color: #F2CC8F;
+  color: var(--contact-title-color);
 }
 .contact .contact-body {
   display: flex;
@@ -541,8 +619,8 @@ body {
   width: 2rem;
   height: 2rem;
   font-size: 2rem;
-  color: #F2CC8F;
-  filter: brightness(0) saturate(100%) invert(86%) sepia(36%) saturate(597%) hue-rotate(326deg) brightness(102%) contrast(90%);
+  color: var(--contact-text);
+  filter: var(--contact-filter);
   -webkit-user-select: none;
   user-select: none;
 }
@@ -554,6 +632,12 @@ body {
 .contact .contact-method > * {
   margin-left: 1rem;
   margin-top: 1rem;
+}
+.contact .contact-method a {
+  color: var(--contact-method-color);
+}
+.contact .contact-method a:hover {
+  color: var(--primary-light);
 }
 
 /*# sourceMappingURL=style.css.map */

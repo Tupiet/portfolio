@@ -1,0 +1,55 @@
+html {
+    --primary: #E07A5F;
+    --primary-light: #F2CC8F;
+    --secondary: #3D405B;
+    --secondary-light: #8a8daa;
+    --tertiary: #81B29A;
+    --base: #F4F1DE;
+    --text: black;
+    
+    --text-languages: var(--secondary);
+
+    --mode-button: var(--primary-light);
+
+    --about-me-background: var(--primary-light);
+    --about-me-button: var(--primary);
+
+    --works-background: var(--primary-light);
+
+    --project-background: var(--secondary);
+    --project-github-background: var(--secondary-light);
+    --project-github-color: var(--secondary);
+
+    --contact-background: var(--secondary);
+    --contact-color: var(--base);
+    --contact-filter: brightness(0) saturate(100%) invert(86%) sepia(36%) saturate(597%) hue-rotate(326deg) brightness(102%) contrast(90%);
+    --contact-title-color: var(--primary-light);
+}
+
+html[data-theme='dark'] {
+    --primary: #E07A5F;
+    --primary-light: #F2CC8F;
+    --secondary: #3D405B;
+    --secondary-light: #8a8daa;
+    --tertiary: #81B29A;
+    --base: #3D405B;
+    --text: #F4F1DE;
+    
+    --text-languages: #F4F1DE;
+
+    --mode-button: var(--secondary-light);
+
+    --about-me-background: var(--secondary-light);
+    --about-me-button: var(--secondary);
+
+    --works-background: var(--secondary-light);
+
+    --project-background: var(--secondary-light);
+    --project-github-background: var(--secondary);
+    --project-github-color: var(--text);
+
+    --contact-background: var(--secondary-light);
+    --contact-color: var(--text);
+    --contact-filter: brightness(0) saturate(100%) invert(23%) sepia(10%) saturate(1764%) hue-rotate(196deg) brightness(91%) contrast(86%);
+    --contact-title-color: var(--secondary);
+}
