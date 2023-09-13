@@ -25,7 +25,7 @@
             <span><a href="https://escri.dev/es">ES</a></span>
             <span><a href="https://escri.dev/en">EN</a></span>
         </div>
-        <h1 id="my-name">Aleix Escrihuela</h1>
+        <h1 id="my-name">escri.dev</h1>
         <h2 id="my-job">Full-stack developer</h2>
         <a href="#about" id="go-to-about" title="Fletxa baix"><i class="fa-solid fa-chevron-down"></i></a>
     </section>
@@ -260,11 +260,28 @@
             content: 'Guanyador del premi al millor projecte d\'innovació de l\'ImpulsFP!',
         });
 
+        // new TypeIt("#my-name", {
+        //     speed: 75,
+        //     lifeLike: true,
+        //     waitUntilVisible: true
+        // }).go();
         new TypeIt("#my-name", {
             speed: 75,
             lifeLike: true,
-            waitUntilVisible: true
-        }).go();
+            waitUntilVisible: true,
+        })
+        .pause(1500)
+        .move(-9)
+        .type('Aleix ')
+        .move(1)
+        .pause(500)
+        .delete(1)
+        .type('E')
+        .move(9)
+        .delete(4)
+        .type('huela')
+        .go();
+        
     </script>
 </body>
 </html>
