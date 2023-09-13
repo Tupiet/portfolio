@@ -250,6 +250,7 @@
     <script src="static/scripts/tippy.js"></script>
     <script src="static/scripts/typeit.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/type-effect.js"></script>
 
     <script>
         tippy('#mirmeet-trophy', {
@@ -259,29 +260,6 @@
         tippy('#pymeshield-trophy', {
             content: 'Guanyador del premi al millor projecte d\'innovació de l\'ImpulsFP!',
         });
-
-        // new TypeIt("#my-name", {
-        //     speed: 75,
-        //     lifeLike: true,
-        //     waitUntilVisible: true
-        // }).go();
-        new TypeIt("#my-name", {
-            speed: 75,
-            lifeLike: true,
-            waitUntilVisible: true,
-        })
-        .pause(1500)
-        .move(-9)
-        .type('Aleix ')
-        .move(1)
-        .pause(500)
-        .delete(1)
-        .type('E')
-        .move(9)
-        .delete(4)
-        .type('huela')
-        .go();
-        
     </script>
 </body>
 </html>

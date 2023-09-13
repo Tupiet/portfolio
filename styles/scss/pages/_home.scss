@@ -88,12 +88,7 @@ body {
         margin-right: 0.5rem;
         margin-left: 0.5rem;
 
-        word-spacing: 9999rem;
-        & ~ h1 {
-            /* Undo last assignment */
-            word-spacing: unset;
-            display: table-caption;
-        }
+        @include one-word;
 
         @include xl {
             font-size: 5rem;

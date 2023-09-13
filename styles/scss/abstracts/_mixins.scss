@@ -28,6 +28,15 @@
     animation-direction: alternate;
 }
 
+@mixin one-word {
+    word-spacing: 9999rem;
+    & ~ h1 {
+        /* Undo last assignment */
+        word-spacing: unset;
+        display: table-caption;
+    }
+}
+
 @mixin lg {
     @media screen and (min-width: 450px) {
         @content;
