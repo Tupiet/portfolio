@@ -6,6 +6,7 @@ html {
   --tertiary: #81B29A;
   --base: #F4F1DE;
   --text: black;
+  --ti-cursor-color: var(--text);
   --text-languages: var(--secondary);
   --mode-button: var(--primary-light);
   --about-me-background: var(--primary-light);
